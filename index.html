@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chodle - The Daily Image Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 CHODLE</h1>
+            <p class="subtitle">Guess what's in the image!</p>
+        </header>
+
+        <div class="game-container">
+            <div class="image-container">
+                <img id="game-image" src="" alt="Guess this image" />
+                <div class="image-overlay" id="image-overlay">
+                    <div class="reveal-quarter quarter-1" id="quarter-1"></div>
+                    <div class="reveal-quarter quarter-2" id="quarter-2"></div>
+                    <div class="reveal-quarter quarter-3" id="quarter-3"></div>
+                    <div class="reveal-quarter quarter-4" id="quarter-4"></div>
+                </div>
+                <div class="loading" id="loading">Loading...</div>
+            </div>
+
+            <div class="game-info">
+                <div class="attempts-remaining">
+                    <span id="attempts-count">4</span> attempts remaining
+                </div>
+                <div class="reveal-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choices-container" id="choices-container">
+                <button class="choice-btn" data-choice="0"></button>
+                <button class="choice-btn" data-choice="1"></button>
+                <button class="choice-btn" data-choice="2"></button>
+                <button class="choice-btn" data-choice="3"></button>
+            </div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-value" id="current-round">1</span>
+                    <span class="stat-label">Round</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="score">0</span>
+                    <span class="stat-label">Score</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="streak">0</span>
+                    <span class="stat-label">Streak</span>
+                </div>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+            
+            <div class="controls">
+                <button id="next-btn" class="next-btn" style="display: none;">Next Round</button>
+                <button id="restart-btn" class="restart-btn" style="display: none;">Play Again</button>
+            </div>
+        </div>
+
+        <div class="how-to-play">
+            <h3>How to Play</h3>
+            <p>🖼️ Start with only 1/4 of the image visible</p>
+            <p>🤔 Make your best guess from 4 options</p>
+            <p>📈 Each wrong guess reveals more of the image</p>
+            <p>🎯 Score more points for guessing with fewer reveals!</p>
+            <p>🏆 Complete all 5 rounds to see your final score</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
